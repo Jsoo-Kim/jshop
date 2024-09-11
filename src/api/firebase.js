@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {v4 as uuid} from 'uuid';
+import { v4 as uuid } from "uuid";
 import {
   getAuth,
   signInWithPopup,
@@ -61,17 +61,16 @@ export async function addNewProduct(product, imageUrl) {
     id,
     price: parseInt(product.price),
     imageUrl,
-    options: product.options.split(','),
-  })
+    options: product.options.split(","),
+  });
 }
 
 export async function getProducts() {
-  return get(ref(database, 'products')).then(snapshot => {
-    if(snapshot.exists()) {
-      return Object.values(snapshot.val());  // 제품 id 아래에 object 타입의 value! 상품 설명 값들
+  return get(ref(database, "products")).then((snapshot) => {
+    if (snapshot.exists()) {
+      return Object.values(snapshot.val()); // 제품 id 아래에 object 타입의 value! 상품 설명 값들
     }
     return [];
-  })
+  });
 }
-
 
