@@ -3,7 +3,7 @@ import { BsFillPencilFill } from "react-icons/bs";
 import { FiShoppingBag } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import User from "./User";
-import { useAuthContext } from "./context/AuthContext";
+import { useAuthContext } from "../context/AuthContext";
 import Button from "./ui/Button";
 
 export default function Navbar() {

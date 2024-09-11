@@ -2,19 +2,29 @@ import React from "react";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import Button from "../components/ui/Button";
+import { useAuthContext } from "../context/AuthContext";
+import { addOrUpdateToCart } from "../api/firebase";
 
 export default function ProductDetail() {
-  // const location = useLocation();
-  // const { product } = location.state; // navigate로 전달된 product 객체를 가져옴
+  const { uid } = useAuthContext();
+
+  /*
+  const location = useLocation();
+  const { product } = location.state; // navigate로 전달된 product 객체를 가져옴
+  */
   const {
     state: {
       product: { id, image, title, description, category, price, options },
     },
   } = useLocation();
+
   const [selected, setSelected] = useState(options && options[0]);
+
   const handleSelect = (e) => setSelected(e.target.value);
   const handleClick = (e) => {
-    // 여기서 장바구니에 추가하면 됨!
+    // 여기서 장바구니에 추가!
+    const product = { id, image, title, price, option: selected, quantity: 1 };
+    addOrUpdateToCart(uid, product);
   };
 
   return (
