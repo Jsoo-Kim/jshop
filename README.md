@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3983bcb8-3541-4e72-90a0-b8a7a2348f07/deploy-status)](https://app.netlify.com/sites/enjoyjshop/deploys)
+
 # [JSop] 쇼핑몰 서비스 with React.js (클론코딩)
 * 강의명: [드림코딩] 리액트 개념정리 · 클론코딩
 
