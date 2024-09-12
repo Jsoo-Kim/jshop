@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Button from "../components/ui/Button";
 import { uploadImage } from "../api/uploader";
-import { addNewProduct } from "../api/firebase";
+import useProducts from "../hooks/useProducts";
 
 export default function NewProduct() {
   const [product, setProduct] = useState({});
   const [file, setFile] = useState();
   const [isUploading, setIsUploading] = useState(false);
   const [success, setSuccess] = useState();
+  const { addProduct } = useProducts();
 
   const handleChange = (e) => {
     const { name, value, files } = e.target; // 이벤트의 대상 요소 (이 경우엔 input 요소)
@@ -29,13 +30,17 @@ export default function NewProduct() {
       .then((url) => {
         // console.log("imageUrl from Cloudinary: ", url);
         // Firebase에 새로운 제품을 추가
-        addNewProduct(product, url) //
-          .then(() => {
-            setSuccess("성공적으로 제품이 등록되었습니다.");
-            setTimeout(() => {
-              setSuccess(null);
-            }, 4000);
-          });
+        addProduct.mutate(
+          { product, url },
+          {
+            onSuccess: () => {
+              setSuccess("성공적으로 제품이 등록되었습니다.");
+              setTimeout(() => {
+                setSuccess(null);
+              }, 4000);
+            },
+          }
+        );
       })
       .finally(() => setIsUploading(false));
   };
