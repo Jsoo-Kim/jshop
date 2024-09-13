@@ -2,7 +2,7 @@
 
 https://enjoyjshop.netlify.app 
 
-# [JSop] 쇼핑몰 서비스 with React.js (클론코딩)
+# [JSop] 쇼핑몰 서비스 with React.js 
 * 강의명: [드림코딩] 리액트 개념정리 · 클론코딩
 
 이 프로젝트는 **React**, **Firebase**, **Cloudinary**를 사용하여 구축된 간단한 쇼핑몰 애플리케이션입니다. 아래는 주요 기능과 그 설명입니다.
