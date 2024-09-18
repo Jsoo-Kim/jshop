@@ -58,6 +58,7 @@ https://enjoyjshop.netlify.app
 ## 사용 기술 스택
 
 - **React**: 프론트엔드 UI 프레임워크
+- **Tailwind CSS**: 유틸리티 기반 CSS 프레임워크
 - **Firebase**: 구글 인증, 제품 데이터베이스, 장바구니 관리를 위해 사용
 - **Cloudinary**: 제품 이미지 업로드 및 저장에 사용
 - **Netlify**: Netlify에서 배포 및 호스팅
