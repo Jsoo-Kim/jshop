@@ -69,6 +69,7 @@ https://enjoyjshop.netlify.app
 ## 개선 사항
 
 - 주문 및 결제 기능 추가
+- 재고 관리 기능 추가
 - Spring Boot 및 실제 데이터베이스, 인증 추가
 - 이미지 저장소를 S3 로 변경
 - EC2, 도커, Nginx, Github Actions를 이용한 CI CD 구축
